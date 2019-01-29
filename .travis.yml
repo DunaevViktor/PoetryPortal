@@ -1,0 +1,19 @@
+branches:
+  only:
+    - master
+    - dev
+language: node_js
+node_js:
+  - lts/*
+cache: npm
+script:
+  - npm run build
+before_deploy:
+  - cd build
+deploy: 
+  skip_cleanup: true
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  app:
+    dev: poetry-portal-dev
+    master: poetry-portal-prod
