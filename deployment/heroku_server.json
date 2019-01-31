@@ -1,8 +1,0 @@
-{
-    "dependencies": {
-        "serve": "10.1.1"
-    },
-    "scripts": {
-        "start": "./node_modules/.bin/serve -l $PORT -s"
-    }
-}

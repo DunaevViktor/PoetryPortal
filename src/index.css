@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Lobster';
+    src: url(/fonts/Lobster-Regular.ttf);
+}
+  
+@font-face {
+    font-family: 'Caveat';
+    src: url(/fonts/Caveat-Regular.ttf);
+}
+  
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(/fonts/NotoSans-Regular.ttf);
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Lobster','Caveat','Noto Sans';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+}
+
+.biba{
+    padding: 8px;
+    border: 1px #ccc solid;
+    width: 200px;
+    height: 200px;
+    margin-left: 20px;
+}
