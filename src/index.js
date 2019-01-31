@@ -1,6 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Block = function () {
+    return <div>Ky!</div>
+}
+
+/*class Block extends React.Component {
+    render() {
+     return <div>Ky!</div>
+    }
+}*/
+
+ReactDOM.render(
+    Block,
+    document.querySelector('#root')
+)
