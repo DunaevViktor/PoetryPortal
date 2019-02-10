@@ -1,6 +1,11 @@
 import React from "react";
 import "./TodoItem.css";
 
+const TODO_STATUSES = {
+  DONE: "Готово",
+  PENDING: "Не готово"
+}
+
 class TodoItem extends React.Component {
   constructor(props) {
     super(props);
@@ -12,30 +17,30 @@ class TodoItem extends React.Component {
     this.onChangeStatus = this.onChangeStatus.bind(this);
   }
 
-  onChangeStatus() {
-    if (this.state.status === "Не готово") {
-      this.setState({ status: "Готово" });
+  onChangeStatus(){
+    if (this.state.status === TODO_STATUSES.PENDING) {
+      this.setState({status: TODO_STATUSES.DONE});
     } else {
-      this.setState({ status: "Не готово" });
+      this.setState({status: TODO_STATUSES.PENDING});
     }
   }
 
   render() {
-    let colorBut = "";
+    let colorOfTextButton = "";
 
-    if (this.state.status === "Не готово") {
-      colorBut = "butStyleFalse";
+    if (this.state.status === TODO_STATUSES.PENDING) {
+      colorOfTextButton = "TodoItem-Style-False";
     } else {
-      colorBut = "butStyleTrue";
+      colorOfTextButton = "TodoItem-Style-True";
     }
 
     return (
       <div>
         {this.props.item.text}
-        <button className={colorBut} onClick={this.onChangeStatus}>
+        <button className={colorOfTextButton} onClick={this.onChangeStatus}>
           {this.state.status}
         </button>
-        <b className="dateStyle">{this.props.item.date}</b>
+        <b className="TodoItem-Date-Style">{this.props.item.date}</b>
       </div>
     );
   }

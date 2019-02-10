@@ -1,55 +1,18 @@
-@font-face {
-  font-family: "Lobster";
-  src: url(/fonts/Lobster-Regular.ttf);
-}
-
-@font-face {
-  font-family: "Caveat";
-  src: url(/fonts/Caveat-Regular.ttf);
-}
-
-@font-face {
-  font-family: "Noto Sans";
-  src: url(/fonts/NotoSans-Regular.ttf);
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Lobster", "Caveat",
-    "Noto Sans";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.myStyle {
-  padding: 8px;
-  border: 1px #ccc solid;
-  margin-left: 20px;
-  margin-top: 20px;
-  width: 50%;
-}
-
-.butStyleTrue {
+.TodoItem-Style-True {
   font-family: "Lobster";
   margin-left: 5px;
   color: rgb(1, 83, 28);
   background-color: rgb(168, 196, 201);
 }
 
-.butStyleFalse {
+.TodoItem-Style-False {
   font-family: "Lobster";
   margin-left: 5px;
   color: rgb(107, 6, 6);
   background-color: rgb(168, 196, 201);
 }
 
-.dateStyle {
+.TodoItem-Date-Style {
   margin-left: 5px;
   color: rgb(31, 31, 189);
 }

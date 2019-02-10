@@ -1,4 +1,5 @@
 import React from "react";
+import "./MyForm.css";
 
 class MyForm extends React.Component {
   constructor(props) {
@@ -7,33 +8,35 @@ class MyForm extends React.Component {
     this.state = {
       text: "",
       date: "",
-      status: "Готов"
+      status: "Не готово"
     };
 
-    this.onSubmit = this.onSubmit.bind(this);
+    this.onSubmitClick = this.onSubmitClick.bind(this);
   }
 
-  onSubmit(event) {
+  onSubmitClick(event) {
     event.preventDefault();
 
-    const obj = {
+    const resultsOfMyFormInput = {
       text: this.state.text,
       status: this.state.status,
       date: this.state.date
     };
 
-    this.props.onSubmit(obj);
+    this.props.isCloseMyForm(resultsOfMyFormInput);
   }
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmitClick}>
         <label htmlFor="date"> Дата: </label>
         <input
           type="text"
-          name="date"
+          id="date"
           value={this.state.date}
           onChange={event => this.setState({ date: event.target.value })}
+          required
+          pattern="[0-9]{4}[-][0-9]{1,2}[-][0-9]{1,2}"
         />
         <label htmlFor="status"> Статус: </label>
         <select
@@ -48,11 +51,14 @@ class MyForm extends React.Component {
         <label htmlFor="text"> Текст: </label>
         <input
           type="text"
-          name="text"
+          id="text"
           value={this.state.text}
           onChange={event => {
             this.setState({ text: event.target.value });
           }}
+          required
+          minLength="3"
+          maxLength="20"
         />
         <input type="submit" value="Submit" />
       </form>

@@ -1,13 +1,13 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 import MyForm from "./MyForm";
-import "./TodoItem.css";
+import "./TodoList.css";
 
 class TodoList extends React.Component {
   constructor() {
     super();
 
-    var today = new Date(),
+    let today = new Date(2019,1,10),
       date =
         today.getFullYear() +
         "-" +
@@ -31,33 +31,33 @@ class TodoList extends React.Component {
       isInForm: false
     };
 
-    this.onShowForm = this.onShowForm.bind(this);
-    this.onSubmitClick = this.onSubmitClick.bind(this);
+    this.onAddNewTodo = this.onAddNewTodo.bind(this);
+    this.onSubmitClickInMyForm = this.onSubmitClickInMyForm.bind(this);
   }
 
-  onShowForm() {
+  onAddNewTodo() {
     this.setState({ isInForm: true });
   }
 
-  onSubmitClick(obj) {
-    const mas = this.state.todos;
-    mas.push(obj);
+  onSubmitClickInMyForm(resultsOfMyFormInput) {
+    const listToDO = this.state.todos;
+    listToDO.push(resultsOfMyFormInput);
 
-    this.setState({ isInForm: false, todos: mas });
+    this.setState({ isInForm: false, todos: listToDO });
   }
 
   render() {
     const todos = this.state.todos;
 
     if (this.state.isInForm) {
-      return <MyForm onSubmit={this.onSubmitClick} />;
+      return <MyForm isCloseMyForm={this.onSubmitClickInMyForm} />;
     }
 
     return (
-      <div className="myStyle">
+      <div className="TodoList-My-Card-Style">
         <div>
           <button
-            onClick={this.onShowForm}
+            onClick={this.onAddNewTodo}
             type="button"
             className="btn btn-primary"
           >
