@@ -21,7 +21,8 @@ class MyForm extends React.Component {
     const resultsOfMyFormInput = {
       text: this.state.text,
       status: this.state.status,
-      date: this.state.date
+      date: this.state.date,
+      id: this.props.count
     };
 
     this.props.isCloseMyForm(resultsOfMyFormInput);

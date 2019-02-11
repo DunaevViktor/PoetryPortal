@@ -2,6 +2,9 @@ import React from "react";
 import TodoItem from "./TodoItem";
 import MyForm from "./MyForm";
 import "./TodoList.css";
+import { TODO_STATUSES } from './TodoItem';
+
+let numberOfTodo = 2;
 
 class TodoList extends React.Component {
   constructor() {
@@ -20,12 +23,14 @@ class TodoList extends React.Component {
         {
           date: date,
           status: "Не готово",
-          text: "Покормить кота"
+          text: "Покормить кота",
+          id: 0
         },
         {
           date: date,
           status: "Готово",
-          text: "Катнуть в доту"
+          text: "Катнуть в доту",
+          id: 1
         }
       ],
       isInForm: false
@@ -33,6 +38,20 @@ class TodoList extends React.Component {
 
     this.onAddNewTodo = this.onAddNewTodo.bind(this);
     this.onSubmitClickInMyForm = this.onSubmitClickInMyForm.bind(this);
+    this.onChangeStatusInTodoItem = this.onChangeStatusInTodoItem.bind(this);
+  }
+
+  onChangeStatusInTodoItem(idOfTask){
+    let list = this.state.todos;
+
+    console.log(list[idOfTask]);
+    if (list[idOfTask].status === TODO_STATUSES.PENDING) {
+      list[idOfTask].status = TODO_STATUSES.DONE;
+    } else {
+      list[idOfTask].status = TODO_STATUSES.PENDING;
+    }
+    console.log(list[idOfTask]);
+    this.setState({ todos: list});
   }
 
   onAddNewTodo() {
@@ -48,9 +67,11 @@ class TodoList extends React.Component {
 
   render() {
     const todos = this.state.todos;
+    let numOfTasks = numberOfTodo;
 
     if (this.state.isInForm) {
-      return <MyForm isCloseMyForm={this.onSubmitClickInMyForm} />;
+      numberOfTodo++;
+      return <MyForm isCloseMyForm={this.onSubmitClickInMyForm} count={numOfTasks}/>;
     }
 
     return (
@@ -67,7 +88,7 @@ class TodoList extends React.Component {
         <ul>
           {todos.map((item, i) => (
             <li key={i}>
-              <TodoItem item={item} />
+              <TodoItem item={item} changeStatus={this.onChangeStatusInTodoItem} />
             </li>
           ))}
         </ul>

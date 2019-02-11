@@ -17,12 +17,17 @@ class TodoItem extends React.Component {
     this.onChangeStatus = this.onChangeStatus.bind(this);
   }
 
-  onChangeStatus(){
+  /*onChangeStatus(){
     if (this.state.status === TODO_STATUSES.PENDING) {
       this.setState({status: TODO_STATUSES.DONE});
     } else {
       this.setState({status: TODO_STATUSES.PENDING});
     }
+  }*/
+
+  onChangeStatus(){
+    let idOfTask = this.props.item.id;
+    this.props.changeStatus(idOfTask);
   }
 
   render() {
