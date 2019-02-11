@@ -1,5 +1,6 @@
 import React from "react";
 import "./MyForm.css";
+import { TODO_STATUSES } from './TodoItem';
 
 class MyForm extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class MyForm extends React.Component {
     this.state = {
       text: "",
       date: "",
-      status: "Не готово"
+      status: TODO_STATUSES.PENDING
     };
 
     this.onSubmitClick = this.onSubmitClick.bind(this);
@@ -31,7 +32,7 @@ class MyForm extends React.Component {
       <form onSubmit={this.onSubmitClick}>
         <label htmlFor="date"> Дата: </label>
         <input
-          type="text"
+          type="date"
           id="date"
           value={this.state.date}
           onChange={event => this.setState({ date: event.target.value })}
@@ -45,8 +46,8 @@ class MyForm extends React.Component {
             this.setState({ status: event.target.value });
           }}
         >
-          <option value="Готово">Готово</option>
-          <option value="Не готово">Не готово</option>
+          <option value={TODO_STATUSES.DONE}>Готово</option>
+          <option value={TODO_STATUSES.PENDING}>Не готово</option>
         </select>
         <label htmlFor="text"> Текст: </label>
         <input

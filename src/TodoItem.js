@@ -1,7 +1,7 @@
 import React from "react";
 import "./TodoItem.css";
 
-const TODO_STATUSES = {
+export const TODO_STATUSES = {
   DONE: "Готово",
   PENDING: "Не готово"
 }
