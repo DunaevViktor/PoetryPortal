@@ -1,9 +1,16 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Main from "./Main";
+import RouteHeader from "./RouteHeader";
 
 class App extends Component {
   render() {
-    return <React.Fragment></React.Fragment>
+    return (
+      <div>
+        <RouteHeader />
+        <Main />
+      </div>
+    );
   }
 }
 
