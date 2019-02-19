@@ -1,0 +1,15 @@
+.btn {
+  background: rgb(255, 255, 255);
+}
+
+.float {
+  float: right;
+}
+
+#footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:70px;
+    width:100%;
+}
