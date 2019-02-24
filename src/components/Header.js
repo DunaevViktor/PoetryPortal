@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./Header.css";
 
-const arrayOfLinks = {
-  poetry_portal: "#",
-  main_page: "#",
-  about_me: "#",
+const Links = {
+  poetryPortal: "#",
+  mainPage: "#",
+  aboutMe: "#",
   feedback: "#"
 };
 
@@ -13,14 +13,14 @@ class Header extends Component {
     return (
       <header>
         <nav className="navbar">
-          <a className="navbar-brand" href={arrayOfLinks.poetry_portal}>
+          <a className="navbar-brand" href={Links.poetryPortal}>
             Поэтический Портал
           </a>
 
           <div>
-            <form action={arrayOfLinks.main_page}>
+            <form action={Links.mainPage}>
               <button
-                className="navbar-toggler btn header-btn-main btn-light"
+                className="navbar-toggler btn header-btn-main"
                 type="submit"
                 data-toggle="collapse"
                 data-target="#navbarSupportedContent"
@@ -32,9 +32,9 @@ class Header extends Component {
               </button>
             </form>
 
-            <form action={arrayOfLinks.about_me}>
+            <form action={Links.aboutMe}>
               <button
-                className="navbar-toggler btn header-btn-me btn-light"
+                className="navbar-toggler btn header-btn-me"
                 type="submit"
                 data-toggle="collapse"
                 data-target="#navbarSupportedContent"
@@ -46,9 +46,9 @@ class Header extends Component {
               </button>
             </form>
 
-            <form action={arrayOfLinks.feedback}>
+            <form action={Links.feedback}>
               <button
-                className="navbar-toggler btn header-btn-feedback btn-light"
+                className="navbar-toggler btn header-btn-feedback"
                 type="submit"
                 data-toggle="collapse"
                 data-target="#navbarSupportedContent"
