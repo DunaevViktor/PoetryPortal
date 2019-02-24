@@ -1,11 +1,9 @@
-.btn {
-  background: rgb(255, 255, 255);
-}
-
 .footer-button-float {
   float: right;
+  margin-left: 5px;
+  margin-right: 5px;
 }
-
+/*fix footer position . watch git*/
 #poetry-portal-footer {
     position:fixed;
     left:0px;

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
-const arrayOfLinks = {
+const Links = {
   twitter: "https://twitter.com/viktor_dunaev",
   facebook: "https://www.facebook.com/geras.lord",
   vk: "https://vk.com/viva_belarus_mc",
@@ -11,29 +11,21 @@ const arrayOfLinks = {
 const Footer = function() {
   return (
     <footer id="poetry-portal-footer">
-      <form action={arrayOfLinks.facebook}>
-        <button type="submit" className="btn btn-light footer-button-float">
-          <i className="fab fa-facebook-square fa-3x" />
-        </button>
-      </form>
+      <a href={Links.facebook} className="footer-button-float">
+        <i className="fab fa-facebook-square fa-3x" />
+      </a>
 
-      <form action={arrayOfLinks.twitter}>
-        <button type="submit" className="btn btn-light footer-button-float">
-          <i className="fab fa-twitter-square fa-3x" />
-        </button>
-      </form>
+      <a href={Links.twitter} className="footer-button-float">
+        <i className="fab fa-twitter-square fa-3x" />
+      </a>
 
-      <form action={arrayOfLinks.vk}>
-        <button type="submit" className="btn btn-light footer-button-float">
-          <i class="fab fa-vk fa-3x" />
-        </button>
-      </form>
+      <a href={Links.vk} className="footer-button-float">
+        <i class="fab fa-vk fa-3x" />
+      </a>
 
-      <form action={arrayOfLinks.instagram}>
-        <button type="submit" className="btn btn-light footer-button-float">
-          <i class="fab fa-instagram fa-3x" />
-        </button>
-      </form>
+      <a href={Links.instagram} className="footer-button-float">
+        <i class="fab fa-instagram fa-3x" />
+      </a>
     </footer>
   );
 };
