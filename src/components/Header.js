@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { ROUTES } from "../route";
 
 const LINKS = {
-  poetryPortal: "#",
-  mainPage: "#",
-  aboutMe: "#",
-  feedback: "#"
+  poetryPortal: ROUTES[0].link,
+  mainPage: ROUTES[0].link,
+  aboutMe: ROUTES[1].link,
+  feedback: ROUTES[2].link
 };
 
 class Header extends Component {
