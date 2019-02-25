@@ -1,24 +1,36 @@
 @font-face {
-  font-family: 'Lobster';
+  font-family: "Lobster";
   src: url(/fonts/Lobster-Regular.ttf);
 }
 
 @font-face {
-  font-family: 'Caveat';
+  font-family: "Caveat";
   src: url(/fonts/Caveat-Regular.ttf);
 }
 
 @font-face {
-  font-family: 'Noto Sans';
+  font-family: "Noto Sans";
   src: url(/fonts/NotoSans-Regular.ttf);
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Lobster','Caveat','Noto Sans';
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Lobster", "Caveat",
+    "Noto Sans";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.content {
+  flex: 1 0 auto;
 }
 
 code {
