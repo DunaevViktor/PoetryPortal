@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
-const Links = [
+const LINKS = [
   {
     name: "twitter",
     link: "https://twitter.com/viktor_dunaev",
@@ -26,21 +26,20 @@ const Links = [
 
 class Footer extends React.Component {
   render() {
-    const list = [];
-    for (let i = 0; i < Links.length; i++) {
-      list.push(
+    const list = LINKS.map(function(LINKS) {
+      return (
         <a
-          href={Links[i].link}
+          href={LINKS.link}
           target="_blank"
           rel="noopener noreferrer"
           className="footer-button-float"
         >
-          <i className={Links[i].style} />
+          <i className={LINKS.style} />
         </a>
       );
-    }
+    });
 
-    return <div>${list}</div>;
+    return <div>{list}</div>;
   }
 }
 

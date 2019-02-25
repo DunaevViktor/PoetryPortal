@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import Footer from "./components/Footer";
-import './App.css';
+import "./App.css";
 
 class App extends Component {
   render() {
-    return <Footer/>
+    return (
+      <div class="app-body">
+        <main className="app-content" />
+        <Footer className="app-footer" />
+      </div>
+    );
   }
 }
 
