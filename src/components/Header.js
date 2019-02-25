@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import "./Header.css";
 
-const Links = {
+const LINKS = {
   poetryPortal: "#",
   mainPage: "#",
   aboutMe: "#",
@@ -11,77 +10,57 @@ const Links = {
 class Header extends Component {
   render() {
     return (
-      <header>
-        <nav className="navbar">
-          <a className="navbar-brand" href={Links.poetryPortal}>
-            Поэтический Портал
-          </a>
-
-          <div>
-            <form action={Links.mainPage}>
+      <div className="container-fluid">
+        <nav className="navbar navbar-inverse navbar-default" role="navigation">
+          <div className="container-fluid">
+            <div className="navbar-header">
               <button
-                className="navbar-toggler btn header-btn-main"
-                type="submit"
+                type="button"
+                className="navbar-toggle"
                 data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
+                data-target="#bs-example-navbar-collapse-1"
               >
-                Главная
+                <span className="sr-only">Переключение навигации</span>
+                <span className="icon-bar" />
+                <span className="icon-bar" />
+                <span className="icon-bar" />
               </button>
-            </form>
+              <a className="navbar-brand" href={LINKS.poetryPortal}>
+                <u>Поэтический портал</u>
+              </a>
+            </div>
 
-            <form action={Links.aboutMe}>
-              <button
-                className="navbar-toggler btn header-btn-me"
-                type="submit"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                Обо мне
-              </button>
-            </form>
-
-            <form action={Links.feedback}>
-              <button
-                className="navbar-toggler btn header-btn-feedback"
-                type="submit"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                Отзыв
-              </button>
-            </form>
-          </div>
-
-          <div
-            className="collapse navbar-collapse header-div-serch"
-            id="navbarSupportedContent"
-          >
-            <form className="form-inline my-2 my-lg-0 header-form-serch">
-              <input
-                className="form-control mr-sm-2"
-                type="search"
-                placeholder="Введите название..."
-                aria-label="Search"
-              />
-              <button
-                className="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
-              >
-                Найти
-              </button>
-            </form>
+            <div
+              className="collapse navbar-collapse"
+              id="bs-example-navbar-collapse-1"
+            >
+              <ul className="nav navbar-nav">
+                <li>
+                  <a href={LINKS.mainPage}>Главная</a>
+                </li>
+                <li>
+                  <a href={LINKS.aboutMe}>Обо мне</a>
+                </li>
+                <li>
+                  <a href={LINKS.feedback}>Отзыв</a>
+                </li>
+              </ul>
+              <form className="navbar-form navbar-right" role="search">
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Введите название..."
+                  />
+                </div>
+                <button type="submit" className="btn btn-default">
+                  Найти
+                </button>
+              </form>
+            </div>
           </div>
         </nav>
-      </header>
+      </div>
     );
   }
 }
