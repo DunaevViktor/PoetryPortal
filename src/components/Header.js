@@ -10,7 +10,7 @@ const LINKS = {
 class Header extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <header className="container-fluid">
         <nav className="navbar navbar-inverse navbar-default" role="navigation">
           <div className="container-fluid">
             <div className="navbar-header">
@@ -60,7 +60,7 @@ class Header extends Component {
             </div>
           </div>
         </nav>
-      </div>
+      </header>
     );
   }
 }
