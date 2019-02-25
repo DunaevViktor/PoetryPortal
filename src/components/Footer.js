@@ -27,15 +27,17 @@ const LINKS = [
 class Footer extends React.Component {
   render() {
     const list = LINKS.map(link => {
-      <a
-        key={link.name}
-        href={link.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="footer-button-float"
-      >
-        <i className={link.style} />
-      </a>;
+      return (
+        <a
+          key={link.name}
+          href={link.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-button-float"
+        >
+          <i className={link.style} />
+        </a>
+      );
     });
 
     return <footer>{list}</footer>;
