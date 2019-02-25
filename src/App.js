@@ -12,9 +12,9 @@ class App extends Component {
         <Header/>
         <main>
           <Switch>
-            <Route exact path={ROUTES[0].link} component={pages.Posts} />
-            <Route path={ROUTES[1].link} component={pages.AboutMe} />
-            <Route path={ROUTES[2].link} component={pages.Feedback} />
+            <Route exact path={ROUTES.posts} component={pages.Posts} />
+            <Route path={ROUTES.aboutMe} component={pages.AboutMe} />
+            <Route path={ROUTES.feedback} component={pages.Feedback} />
           </Switch>
         </main>
       </div>
