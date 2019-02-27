@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import { Switch, Route } from "react-router-dom";
 import { ROUTES } from "./route";
 import pages from "./pages/index";
+import Loading from "./components/Loading";
 
 class App extends Component {
   render() {
