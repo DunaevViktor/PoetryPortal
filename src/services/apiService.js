@@ -1,13 +1,14 @@
 class ApiService {
   getPostsPage(params) {
     const posts = returnPosts();
-    const takenPost = posts.slice(0, params.take);
-    const finalObject = {};
+    const takenPost = posts.slice(0, -params.skip);
+    const finalObject = {
+      taken: takenPost.length,
+      skipped: params.skip + (params.take - takenPost.length),
+      items: takenPost
+    };
 
-    finalObject.taken = takenPost.length;
-    finalObject.skipped = params.skip + (params.take - takenPost.length);
     finalObject.total = finalObject.taken + finalObject.skipped;
-    finalObject.items = takenPost;
 
     return Promise.resolve(finalObject);
   }
