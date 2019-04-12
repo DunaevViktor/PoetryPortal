@@ -5,10 +5,9 @@ class ApiService {
     const finalObject = {
       taken: takenPost.length,
       skipped: params.skip + (params.take - takenPost.length),
+      total: posts.length,
       items: takenPost
     };
-
-    finalObject.total = finalObject.taken + finalObject.skipped;
 
     return Promise.resolve(finalObject);
   }
